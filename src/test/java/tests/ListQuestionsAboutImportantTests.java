@@ -2,44 +2,22 @@ package tests;
 
 import models.MainPage;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
 
+import static constants.Answer.TEXT_ANSWER;
 import static org.junit.Assert.assertEquals;
 
-public class ListQuestionsAboutImportantTests extends Basic  {
+public class ListQuestionsAboutImportantTests extends Basic {
 
     @Test
-    public void checkAnswerOnQuestionsAboutImportant(){
+    public void checkAnswerOnQuestionsAboutImportant() {
 
         // Объект класса главной страницы
         MainPage objMainPage = new MainPage(driver);
 
-        //скролл до списка вопросов
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", objMainPage.getListQuestions());
-
-
-        //objMainPage.clickQuestion(0);
-        assertEquals("Сутки — 400 рублей. Оплата курьеру — наличными или картой.", objMainPage.getTextAnswer(0));
-
-      //  objMainPage.clickQuestion(1);
-        assertEquals("Пока что у нас так: один заказ — один самокат. Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.", objMainPage.getTextAnswer(1));
-
-
-      /*  //клик по вопросу
-        objMainPage.clickQuestion1();
-        // проверка текста ответа
-        assertEquals("Сутки — 400 рублей. Оплата курьеру — наличными или картой.", objMainPage.getTextAnswer1());
-
-
-        //клик по вопросу
-        objMainPage.clickQuestion2();
-        // проверка текста ответа
-        assertEquals("Сутки — 400 рублей. Оплата курьеру — наличными или картой.", objMainPage.getTextAnswer2());*/
-
-
-       // assertEquals("Сутки — 400 рублей. Оплата курьеру — наличными или картой.", objMainPage.getTextAnswer());
-
+        //Цикл по массиву с ожидаемыми ответами
+        for (int i = 0; i < TEXT_ANSWER.length; i++) {
+            //сравнение ответов на вопросы о важном
+            assertEquals("Проверьте текст " + (i + 1) + " ответа", TEXT_ANSWER[i], objMainPage.getTextAnswer(i));
+        }
     }
 }

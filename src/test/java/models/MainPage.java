@@ -1,11 +1,10 @@
 package models;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainPage {
 
@@ -42,17 +41,18 @@ public class MainPage {
     }
 
     //методы
-    //вернуть веб элемент  со списком вопросов
-    public WebElement getListQuestions() {
-        return driver.findElement(listQuestions);
+
+    //вернуть локатор из списка вопросов
+    public WebElement getQuestion(int index) {
+        return driver.findElement(questionList[index]);
     }
 
     //Получить текст ответа
     public String getTextAnswer(int index) {
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", getQuestion(index));
         driver.findElement(questionList[index]).click();
         return driver.findElement(answerList[index]).getText();
     }
-
 
 
 }
