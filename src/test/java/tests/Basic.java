@@ -2,15 +2,18 @@ package tests;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 public class Basic {
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver;
 
     @Before
-    public void openURL() {
+    public void setUp() {
+        //driver =new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 

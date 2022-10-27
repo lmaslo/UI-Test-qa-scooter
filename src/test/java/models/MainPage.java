@@ -5,12 +5,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class MainPage {
 
     private WebDriver driver;
-
-    private By listQuestions = By.className("Home_FAQ__3uVm4");
 
     private By question1 = By.id("accordion__heading-0");
     private By question2 = By.id("accordion__heading-1");
@@ -29,6 +29,9 @@ public class MainPage {
     private By answer6 = By.id("accordion__panel-5");
     private By answer7 = By.id("accordion__panel-6");
     private By answer8 = By.id("accordion__panel-7");
+
+    private By buttonOrderTopPage = By.xpath(".//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
+    private By buttonOrderMiddlePage = By.xpath(".//div[@class='Home_FinishButton__1_cWm']/button[@class='Button_Button__ra12g']");
 
 
     By[] questionList = {question1, question2, question3, question4, question5, question6, question7, question8};
@@ -51,7 +54,14 @@ public class MainPage {
     public String getTextAnswer(int index) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", getQuestion(index));
         driver.findElement(questionList[index]).click();
+        //добавить ожидание элемента
+
         return driver.findElement(answerList[index]).getText();
+    }
+
+    //клик по кнопке Заказать
+    public void clickButtonOrderTopPage() {
+        driver.findElement(buttonOrderTopPage).click();
     }
 
 
