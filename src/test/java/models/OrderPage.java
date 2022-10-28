@@ -46,19 +46,19 @@ public class OrderPage {
         driver.findElement(inputAddress).sendKeys(address);
     }
 
-    public void setSubway() {
-        driver.findElement(inputSubway).sendKeys("ком",Keys.ARROW_DOWN, Keys.ENTER);
+    public void setSubway(String subway) {
+        driver.findElement(inputSubway).sendKeys(subway,Keys.ARROW_DOWN, Keys.ENTER);
   }
 
     public void setPhone(String phone) {
         driver.findElement(inputPhone).sendKeys(phone);
     }
 
-    public void setOrderFormPart1(String name, String surname,String address, String phone) {
+    public void setOrderFormPart1(String name, String surname,String address,String subway, String phone) {
         setName(name);
         setSurname(surname);
         setAddress(address);
-        setSubway();
+        setSubway(subway);
         setPhone(phone);
     }
 
