@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class OrderPage {
 
     private WebDriver driver;
@@ -46,19 +48,19 @@ public class OrderPage {
         driver.findElement(inputAddress).sendKeys(address);
     }
 
-    public void setSubway(String subway) {
-        driver.findElement(inputSubway).sendKeys(subway,Keys.ARROW_DOWN, Keys.ENTER);
+    public void setSubway() {
+        driver.findElement(inputSubway).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
   }
 
     public void setPhone(String phone) {
         driver.findElement(inputPhone).sendKeys(phone);
     }
 
-    public void setOrderFormPart1(String name, String surname,String address,String subway, String phone) {
+    public void setOrderFormPart1(String name, String surname,String address, String phone) {
         setName(name);
         setSurname(surname);
         setAddress(address);
-        setSubway(subway);
+        setSubway();
         setPhone(phone);
     }
 

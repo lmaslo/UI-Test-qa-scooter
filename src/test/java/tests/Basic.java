@@ -12,8 +12,8 @@ public class Basic {
 
     @Before
     public void setUp() {
-        //driver =new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver =new ChromeDriver();
+        //driver = new FirefoxDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
