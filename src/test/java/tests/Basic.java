@@ -17,7 +17,7 @@ public class Basic {
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
 
-    //@After
+    @After
     public void closeBrowser() {
         driver.quit();
     }

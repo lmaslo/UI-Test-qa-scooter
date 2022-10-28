@@ -10,17 +10,101 @@ import static org.junit.Assert.assertEquals;
 
 public class ListQuestionsAboutImportantTest extends Basic {
 
-    @Test
-    public void checkAnswerOnQuestionsAboutImportant() {
+    int questionNumber;
 
+    @Test
+    public void checkAnswerText1() {
         // Объект класса главной страницы
         MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 1;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
 
-        //Цикл по массиву с ожидаемыми ответами
-        for (int i = 0; i < TEXT_ANSWER.length; i++) {
-            //сравнение ответов на вопросы о важном
-            assertEquals("Проверьте текст " + (i + 1) + " ответа", TEXT_ANSWER[i], objMainPage.getTextAnswer(i));
-        }
+    @Test
+    public void checkAnswerText2() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 2;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
+
+    @Test
+    public void checkAnswerText3() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 3;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
+
+    @Test
+    public void checkAnswerText4() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 4;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
+
+    @Test
+    public void checkAnswerText5() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 5;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
+
+    @Test
+    public void checkAnswerText6() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 6;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
+
+    @Test
+    public void checkAnswerText7() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 7;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
+    }
+
+    @Test
+    public void checkAnswerText8() {
+        // Объект класса главной страницы
+        MainPage objMainPage = new MainPage(driver);
+        //Ожидание элементов
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        //Номер вопроса
+        questionNumber = 8;
+        //Проверка текста ответа
+        assertEquals("Проверьте текст " + questionNumber + " ответа", TEXT_ANSWER[questionNumber - 1], objMainPage.getTextAnswer(questionNumber - 1));
     }
 }

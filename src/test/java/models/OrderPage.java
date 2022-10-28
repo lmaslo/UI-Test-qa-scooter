@@ -28,10 +28,6 @@ public class OrderPage {
 
     private By headerWindow = By.className("Order_ModalHeader__3FDaJ");
 
-
-
-
-
     //Конструктор класса
     public OrderPage(WebDriver driver) {
         this.driver = driver;
@@ -58,11 +54,20 @@ public class OrderPage {
         driver.findElement(inputPhone).sendKeys(phone);
     }
 
+    public void setOrderFormPart1(String name, String surname,String address, String phone) {
+        setName(name);
+        setSurname(surname);
+        setAddress(address);
+        setSubway();
+        setPhone(phone);
+    }
+
+
+
     //клик по кнопке далее
     public void clickButtonNext() {
         driver.findElement(buttonNext).click();
     }
-
 
     public void setDate() {
         driver.findElement(inputDate).sendKeys(Keys.ARROW_DOWN, Keys.ENTER);
@@ -76,9 +81,15 @@ public class OrderPage {
         driver.findElement(inputColorScooter).click();
     }
 
-
     public void setComment(String comment) {
         driver.findElement(inputComment).sendKeys(comment);
+    }
+
+    public void setOrderFormPart2(String comment){
+        setDate();
+        setCountDates();
+        setColorScooter();
+        setComment(comment);
     }
 
     public void clickButtonOrder() {
